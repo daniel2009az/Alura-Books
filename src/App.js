@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
+// import './App.css'
+import styled from 'styled-components'
+import Pesquisa from './components/Pesquisa';
+
+const AppContainer = styled.div`
+height: 100vh;
+width: 100vw;
+background-image: linear-gradient(90deg, rgb(9, 9, 57),  rgb(111, 98, 132));
+
+`
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // <div className='Test'>
+      <AppContainer>
+        <Header/>
+        <Pesquisa/>
+      </AppContainer>  
+    // </div>
+  )
 }
 
 export default App;
