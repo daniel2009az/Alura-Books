@@ -5,5 +5,15 @@ export const books = [
     {name: 'Ruff Ghanor Rei coding', id: 3, src: book},
     {name: 'Java: O cthulhu', id: 4, src: book},
     {name: 'Por que sim ao perguntarem, Python?', id: 5, src: book},
+    {name: 'Por que sim ao perguntarem, Python?', id: 5, src: book},
+    {name: 'Por que sim ao perguntarem, Python?', id: 5, src: book},
+    {name: 'Por que sim ao perguntarem, Python?', id: 5, src: book},
+    {name: 'Por que sim ao perguntarem, Python?', id: 5, src: book},
+    {name: 'Por que sim ao perguntarem, Python?', id: 5, src: book},
+    {name: 'Por que sim ao perguntarem, Python?', id: 5, src: book},
+    {name: 'Por que sim ao perguntarem, Python?', id: 5, src: book},
+    {name: 'Por que sim ao perguntarem, Python?', id: 5, src: book},
+    {name: 'Por que sim ao perguntarem, Python?', id: 5, src: book},
+    {name: 'Por que sim ao perguntarem, Python?', id: 5, src: book},
 
   ]

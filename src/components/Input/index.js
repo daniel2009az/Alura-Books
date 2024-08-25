@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Imput = styled.input`
+const Input = styled.input`
 order: 1px solid #fff;
 background: transparent;
 
@@ -19,4 +19,4 @@ margin-bottom: 10px;
 
 
 `
-export default Imput;
+export default Input;

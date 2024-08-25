@@ -8,7 +8,7 @@ display: flex;
 align-items: center;
 
 `
-const Icon = styled.li`
+export const Icon = styled.li`
 cursor: pointer;
 margin-left: 30px;
 `
