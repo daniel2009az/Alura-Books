@@ -1,8 +1,8 @@
-import Header from './components/Header'
+// import Header from './components/Header'
 // import './App.css'
 import styled from 'styled-components'
-import Pesquisa from './components/Pesquisa';
-import NewBooks from './components/NewBooks'
+import Pesquisa from '../components/Pesquisa';
+import NewBooks from '../components/NewBooks'
 
 const AppContainer = styled.div`
 /* height: 100vh;
@@ -15,11 +15,12 @@ width: 100%;
 `
 
 
-function App() {
+function Home() {
   return (
     // <div className='Test'>
-      <AppContainer>
-        <Header/>
+    
+    <AppContainer>
+        {/* <Header/> */}
         <Pesquisa/>
         <NewBooks/>
       </AppContainer>  
@@ -27,4 +28,4 @@ function App() {
   )
 }
 
-export default App;
+export default Home;

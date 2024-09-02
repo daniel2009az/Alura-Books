@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import './index.css';
-import App from './App';
+import Home from './routes/Home';
 import reportWebVitals from './reportWebVitals';
 import {createGlobalStyle} from 'styled-components'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
 const GlobalStyle = createGlobalStyle`
+
   body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,7 +16,14 @@ const GlobalStyle = createGlobalStyle`
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
   height: 100vh;
+  box-sizing: border-box;
   overflow-x: hidden;
+  max-width: 100%;
+
+
+
+
+  
 }
 
 code {
@@ -26,13 +34,31 @@ code {
  li{
   list-style: none;
  }
+
+a {
+display: flex;
+text-decoration: none;
+cursor: default;
+color: black;
+}
+
+ 
+
 `
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <GlobalStyle/>
-    <App />
+    <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/favoritos" element={<p>Olá</p>} />
+        <Route path="/categorias" element={<p>Olá</p>} />
+        <Route path="/minha-estante" element={<p>Olá</p>} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

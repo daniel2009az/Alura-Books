@@ -3,6 +3,9 @@ import styled from "styled-components";
 const Input = styled.input`
 order: 1px solid #fff;
 background: transparent;
+max-width: 100%;
+
+
 
 border: 1px solid #fff;
 padding: 20px 140px;

@@ -1,17 +1,22 @@
 import Input from "../Input"
 import styled from "styled-components"
-import { useState } from "react"
-import { books } from "./dadosPesquisa"
+import { useEffect, useState } from "react"
+// import { books } from "./dadosPesquisa"
+import { getBooks } from "../../services/books"
  
 const SearchContainer = styled.section`
 height: 100%;
 padding: 50px 0;
-padding-top: 85px;
+padding-top: 2em;
 text-align: center;
 /* color: white; */
 display: flex;
 flex-direction: column;
 align-items: center;
+width: 100vw;
+box-sizing: border-box;
+justify-content: end;
+flex-direction: column;
 `
 const Titulo = styled.h2`
 font-family: 'Arial, Helvetica, sans-serif';
@@ -96,7 +101,16 @@ function Search(){
             
         }
     }
+    const fetchBooks = async () => {  
+        const booksApi = await getBooks()
+        setBooks(booksApi)
+    }
+    useEffect(() => {
+        fetchBooks()
+    } , [])
     const [searchedBooks,setSearchedBooks] = useState([])
+    const [books, setBooks] = useState([])
+    
     console.log(searchedBooks)
     return(
         
@@ -106,16 +120,16 @@ function Search(){
             <Subtitulo>Encontre seu livro em nossa estante!</Subtitulo>
             <Input placeholder ='Escreva sua proxima leitura'  onKeyDown={handleKey}
             onBlur={event => {
-               const typedText = event.target.value;
-               const typedResult = books.filter(book => book.name.includes(typedText));
-               setSearchedBooks(typedResult)
+                const typedText = event.target.value;
+                const typedResult = books.filter(book => book.title.includes(typedText));
+                setSearchedBooks(typedResult)
             }}
             />
             <BookContainer >
             {searchedBooks.map(book  => (
                 <BookItem>
-                    <img src={book.src} alt={book.name} />
-                    <p>{book.name}</p>
+                    <img src={book.src} alt={book.title} />
+                    <p>{book.title}</p>
                 </BookItem>
             ))}
             </BookContainer>
