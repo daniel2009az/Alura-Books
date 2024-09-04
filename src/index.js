@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Home from './routes/Home';
+import Favorites from './routes/Favorites';
 import reportWebVitals from './reportWebVitals';
 import {createGlobalStyle} from 'styled-components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -54,7 +55,7 @@ root.render(
       <Header/>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/favoritos" element={<p>Olá</p>} />
+        <Route path="/favoritos" element={<Favorites/>} />
         <Route path="/categorias" element={<p>Olá</p>} />
         <Route path="/minha-estante" element={<p>Olá</p>} />
       </Routes>

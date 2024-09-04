@@ -9,7 +9,8 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0em 1em;
-  padding-top: 0.5em;
+  margin-top: 1em;
+  padding-bottom: 1em;
   width: 100%;
   box-sizing: border-box;
   max-width: 100%;

@@ -96,13 +96,14 @@ function Search(){
     const handleKey = (event) => {
         if(event.key === 'Enter'){
             const typedText = event.target.value
-            const typedResult = books.filter(book => book.name.includes(typedText))
+            const typedResult = books.filter(book => book.title.includes(typedText))
             setSearchedBooks(typedResult)
             
         }
     }
     const fetchBooks = async () => {  
         const booksApi = await getBooks()
+        console.log(booksApi)
         setBooks(booksApi)
     }
     useEffect(() => {
@@ -111,7 +112,7 @@ function Search(){
     const [searchedBooks,setSearchedBooks] = useState([])
     const [books, setBooks] = useState([])
     
-    console.log(searchedBooks)
+    console.log(books)
     return(
         
         <SearchContainer bk = 'linear-gradient(90deg, rgb(60, 56,101),  rgb(111, 98, 132))' 
@@ -127,7 +128,7 @@ function Search(){
             />
             <BookContainer >
             {searchedBooks.map(book  => (
-                <BookItem>
+                <BookItem id={book.id} key={book.id}>
                     <img src={book.src} alt={book.title} />
                     <p>{book.title}</p>
                 </BookItem>
